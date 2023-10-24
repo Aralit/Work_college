@@ -7,26 +7,39 @@ using namespace std;
 int main()
 {
 	setlocale(0, "");
-
+	//Программа
 	bool work = true;
 	int input_task;
+	char input_resume;
+	bool resume;
+	//1
 	int a = 0;
 	int number_1;
+	//2
 	string number_2;
 	bool is_num_2 = true;
+	//3
 	string year;
 	bool is_num_3 = true;
 	int year_int;
+	//4
 	string input_str;
 	bool palindrome = true;
 	int half_str;
+	//5
 	int num_5;
+	//6
 	int num_6;
-	char intput_resume;
-	bool resume;
+	//7
 	int num_7;
+	//8
 	string input_str_1_8;
 	string input_str_2_8;
+	//9
+	int num_9;
+	int sum_9 = 0;
+	//10
+	int num_10;
 
 	while (work) {
 		cout << "1. Напишите программу, которая проверяет, является ли число простым." << endl;
@@ -39,6 +52,7 @@ int main()
 		cout << "8. Напишите программу, которая определяет, является ли введенная строка анаграммой другой строки." << endl;
 		cout << "9. Напишите программу, которая определяет, является ли введенное число совершенным (сумма всех делителей числа равна самому числу)." << endl;
 		cout << "10. Напишите программу, которая определяет, является ли введенное число факториалом другого числа." << endl;
+		cout << "0. Выход." << endl;
 		cout << "\nВведите номер задания, коорое хотите открыть - ";
 		cin >> input_task;
 		system("cls");
@@ -183,10 +197,31 @@ int main()
 			}
 			break;
 		case 9:
-			cout << "Данное задние в разработке";
+			cout << "Введите числo: ";
+			cin >> num_9;
+			for (int i = 1; i < num_9; i++) {
+				if (num_9 % i == 0) {
+					sum_9 += i;
+				}
+			}
+			num_9 == sum_9 ? cout << "Чило является совершенным" : cout << "Число не является совершенным";
 			break;
 		case 10:
-			cout << "Данное задние в разработке";
+			cout << "Введите числo: ";
+			cin >> num_10;
+			for (int i = 1; i < 13; i++) {
+				if (num_10 == 1) {
+					cout << "Число является факториалом какого - то числа";
+					break;
+				}
+				else if (num_10 % i >= 1) {
+					cout << "Число не является факториалом какого-то числа";
+					break;
+				}
+				else {
+					num_10 /= i;
+				}
+			}
 			break;
 		case 0:
 			system("cls");
@@ -196,15 +231,16 @@ int main()
 		default:
 			break;
 		}
-		while (1 && work) {
+		while (1) {
 			cout << "\nПродолжить(y/n)";
-			cin >> intput_resume;
-			if (intput_resume == 'y') {
+			cin >> input_resume;
+			if (input_resume == 'y') {
 				system("cls");
 				break;
 			}
-			else if (intput_resume == 'n') {
+			else if (input_resume == 'n') {
 				work = false;
+				break;
 			}
 			else {
 				system("cls");
